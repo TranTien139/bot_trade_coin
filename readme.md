@@ -13,3 +13,8 @@ get apikey mainet
 ```
 https://binance.com/
 ```
+
+run 
+```
+python3 index.py
+```
