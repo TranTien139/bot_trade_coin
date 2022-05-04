@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    restart: unless-stopped
+    container_name: bot_trade_coin
+    ports:
+      - "8000:8000"
+    environment:
+      apiKey: ${apiKey}
+      secret: ${secret}
+      keyTelegram: ${keyTelegram}
+      idChatTelegram: ${idChatTelegram}
+    volumes:
+      - .:/code
+    network_mode: bridge
